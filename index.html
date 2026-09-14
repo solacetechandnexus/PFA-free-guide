@@ -15,6 +15,7 @@
     --paper: #F7F7F5;
     --muted: #6B6F7B;
     --white: #FFFFFF;
+    --linkedin: #0A66C2;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -101,6 +102,40 @@
     background: transparent;
     color: var(--white);
     border: 1.5px solid rgba(255,255,255,0.4);
+  }
+
+  /* ---------- ALT CONTACT (LinkedIn) ---------- */
+  .alt-contact {
+    margin-top: 18px;
+  }
+  .alt-contact-text {
+    font-family: -apple-system, 'Liberation Sans', Arial, sans-serif;
+    font-size: 13px;
+    color: #ADB2D9;
+    margin-bottom: 10px;
+  }
+  .btn-linkedin {
+    font-family: -apple-system, 'Liberation Sans', Arial, sans-serif;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: bold; font-size: 14px;
+    padding: 12px 22px; border-radius: 40px;
+    text-decoration: none;
+    border: 1.5px solid var(--linkedin);
+    color: #BFD9F7;
+    background: transparent;
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+  .btn-linkedin:hover {
+    background: var(--linkedin);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+  /* variant for light backgrounds (final CTA section still dark, so not needed there, kept for reuse) */
+  .btn-linkedin.on-light {
+    color: var(--linkedin);
+  }
+  .alt-contact-text.on-light {
+    color: var(--muted);
   }
 
   /* ---------- FORM CARD (JotForm sits inside this) ---------- */
@@ -232,6 +267,8 @@
   .btn-primary { background: var(--coral); color: var(--white); box-shadow: 0 10px 24px rgba(249,97,103,0.35); }
   .btn-gold { background: var(--gold); color: var(--navy-dark); }
 
+  .final-alt-contact { margin-top: 26px; }
+
   footer {
     background: var(--navy-darker); color: #6D74A8;
     font-family: -apple-system, 'Liberation Sans', Arial, sans-serif;
@@ -265,6 +302,14 @@
         <a class="btn btn-outline sans" href="https://wa.me/2348082942664?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20PFA">
           💬 Or Message Me on WhatsApp
         </a>
+
+        <!-- LINKEDIN ALT CONTACT (hero) -->
+        <div class="alt-contact">
+          <p class="alt-contact-text">International client? Prefer not to share your number yet?</p>
+          <a class="btn-linkedin" href="https://www.linkedin.com/in/onyebuchi-solace-b683012b3" target="_blank" rel="noopener">
+            ✔ Message Me on LinkedIn (Verified)
+          </a>
+        </div>
       </div>
       <div class="hero-form-col">
         <div class="form-card">
@@ -358,6 +403,14 @@
         <a class="btn btn-gold sans" href="#free-guide">Get the Free Guide</a>
         <a class="btn btn-primary sans" href="https://wa.me/2348082942664?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20PFA">
           💬 Message Me on WhatsApp
+        </a>
+      </div>
+
+      <!-- LINKEDIN ALT CONTACT (final CTA) -->
+      <div class="alt-contact final-alt-contact" style="text-align:center;">
+        <p class="alt-contact-text">International client? Prefer not to share your number yet?</p>
+        <a class="btn-linkedin" href="https://www.linkedin.com/in/onyebuchi-solace-b683012b3" target="_blank" rel="noopener">
+          ✔ Message Me on LinkedIn (Verified)
         </a>
       </div>
     </div>
