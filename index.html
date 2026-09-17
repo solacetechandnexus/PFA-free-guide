@@ -354,6 +354,30 @@ src="https://www.facebook.com/tr?id=28502882726011250&ev=PageView&noscript=1"
               window.jotformEmbedHandler("iframe[id='JotFormIFrame-262337953386064']", "https://form.jotform.com/");
             }
           </script>
+          <!-- Meta Pixel: fire Lead event when the JotForm above is submitted -->
+          <script>
+            (function () {
+              var leadFired = false;
+              window.addEventListener("message", function (event) {
+                if (leadFired) return;
+                var data = event.data;
+                var isSubmit = false;
+
+                if (typeof data === "string") {
+                  isSubmit = data.indexOf("submission-completed") > -1 ||
+                             data.indexOf("formSubmitted") > -1;
+                } else if (data && typeof data === "object") {
+                  isSubmit = data.action === "submission-completed" ||
+                             data.type === "formSubmitted";
+                }
+
+                if (isSubmit && typeof fbq === "function") {
+                  fbq("track", "Lead");
+                  leadFired = true;
+                }
+              });
+            })();
+          </script>
         </div>
       </div>
     </div>
